@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Minha Biblioteca
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <ion-list>
+        <ion-item button [routerLink]="['/livro', livro.id]" *ngFor="let livro of (livros | async)">
+          {{ livro.name }}
+        </ion-item>
+      </ion-list>
+    <ion-button [routerLink]="['/add-livro']">Adicionar Livro</ion-button>
+</ion-content>

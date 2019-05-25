@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Livro
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" offset="4">
+        
+        <img (click)="tiraFoto()" *ngIf="!livro.caminhoFoto" height="100%" src="../../assets/shapes.svg">
+        <img *ngIf="livro.caminhoFoto" height="100%" src="livro.caminhoFoto">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input placeholder="Título" [(ngModel)]="livro.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Editora" [(ngModel)]="livro.editora"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="ISBN" [(ngModel)]="livro.ISBN"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Autor" [(ngModel)]="livro.nomeAutor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ano</ion-label>
+      <ion-datetime [(ngModel)]="livro.ano" display-format="YYYY"></ion-datetime>
+
+    </ion-item>
+    <ion-item>
+      <ion-label>Emprestado?</ion-label>
+      <ion-toggle [(ngModel)]="livro.emprestado" color="primary"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="livro.emprestado">
+      <ion-input placeholder="Emprestado à quem?" [(ngModel)]="livro.emprestadoPara">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Número de páginas" [(ngModel)]="livro.nPaginas"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="livro.estado" value="brown" okText="OK" cancelText="Voltar">
+        <ion-select-option value="brown">Perfeito</ion-select-option>
+        <ion-select-option value="blonde">Bom</ion-select-option>
+        <ion-select-option value="black">Médio</ion-select-option>
+        <ion-select-option value="red">Ruim</ion-select-option>
+      </ion-select>
+
+    </ion-item>
+    <ion-item>
+      <ion-label>Situação</ion-label>
+      <ion-select [(ngModel)]="livro.situacao" value="brown" okText="OK" cancelText="Voltar">
+        <ion-select-option value="brown">Lido</ion-select-option>
+        <ion-select-option value="blonde">Lendo</ion-select-option>
+        <ion-select-option value="black">Não Lido</ion-select-option>
+        <ion-select-option value="black">Não informada</ion-select-option>
+
+
+      </ion-select>
+
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Suas Anotações" [(ngModel)]="livro.anotacoes"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <button>Salvar</button>
+</ion-content>
