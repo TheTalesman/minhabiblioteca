@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "559666342552",
+    "firebase_url": "https://minhabiblioteca-542b9.firebaseio.com",
+    "project_id": "minhabiblioteca-542b9",
+    "storage_bucket": "minhabiblioteca-542b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559666342552:android:7dad29caf17324ee",
+        "android_client_info": {
+          "package_name": "com.ml.alison.myacervoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559666342552-t6r8ot8m53ku1iognj0vvm7us0kg598l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlUlvetlf--9kCPbECO_9xzEqqNO0zueY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559666342552-t6r8ot8m53ku1iognj0vvm7us0kg598l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

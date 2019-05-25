@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item button [routerLink]="['/idea', livro.id]" *ngFor="let livro of (livros | async)">
+          {{ livro.name }}
+        </ion-item>
+      </ion-list>
+    <ion-button (click)="adicionarLivro()">Adicionar Livro</ion-button>
+</ion-content>
