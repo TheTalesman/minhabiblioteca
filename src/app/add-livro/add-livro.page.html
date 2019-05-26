@@ -14,8 +14,8 @@
     <ion-row>
       <ion-col size="4" offset="4">
         
-        <img (click)="tiraFoto()" *ngIf="!livro.caminhoFoto" height="100%" src="../../assets/shapes.svg">
-        <img *ngIf="livro.caminhoFoto" height="100%" src="livro.caminhoFoto">
+        <img (click)="tiraFoto()" *ngIf="!livro.caminhoFoto" src="../../assets/shapes.svg">
+        <img *ngIf="livro.caminhoFoto" src="{{livro.caminhoFoto}}">
 
       </ion-col>
     </ion-row>
@@ -80,5 +80,5 @@
 
   </ion-list>
 
-  <button>Salvar</button>
+  <ion-button  (click)="adicionarAddLivro()" [routerLink]="['/livro']">Salvar</ion-button>
 </ion-content>

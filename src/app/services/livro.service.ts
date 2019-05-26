@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument,
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-export class Livro {
+export interface Livro {
   id?: string;
   titulo: string;
   editora?: string;
@@ -18,9 +18,10 @@ export class Livro {
   estado?: string;
   anotacoes?: string;
   caminhoFoto?: string;
- constructor(){
-   this.emprestado = false;
- }
+  constructor(){
+    livro.emprestado = false
+  }
+ 
 }
 
 @Injectable({
