@@ -18,10 +18,6 @@ export interface Livro {
   estado?: string;
   anotacoes?: string;
   caminhoFoto?: string;
-  constructor(){
-    livro.emprestado = false
-  }
- 
 }
 
 @Injectable({
@@ -59,6 +55,9 @@ export class LivroService {
   }
 
   addLivro(livro: Livro): Promise<DocumentReference> {
+    if (livro.emprestado == undefined) {
+      livro.emprestado = false
+    }
     return this.livroCollection.add(livro);
   }
 

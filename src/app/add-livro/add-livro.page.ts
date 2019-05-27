@@ -14,7 +14,22 @@ export class AddLivroPage {
 
   livro: Livro;
   constructor(private camera: Camera, private activatedRoute: ActivatedRoute, public livroService: LivroService) {
-    this.livro = new Livro();
+    this.livro = {
+      titulo: '',
+      editora: '',
+      ISBN: '',
+      nomeAutor: '',
+      sobreNomeAutor: '',
+      ano: '',
+      emprestado: false,
+      emprestadoPara: '',
+      situacao: '',
+      nPaginas: '',
+      estado: '',
+      anotacoes: '',
+      caminhoFoto: '',
+
+    };
   }
 
   ionViewWillEnter() {
@@ -47,8 +62,8 @@ export class AddLivroPage {
     console.log($val);
   }
   adicionarAddLivro() {
-    
-    this.livroService.addLivro(livro);
+
+    this.livroService.addLivro(this.livro);
 
   }
 }
